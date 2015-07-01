@@ -1,0 +1,12 @@
+{
+    "name": "roong/captcha",
+    "require": {
+        "phpunit/phpunit": "^4.7"
+    },
+    "authors": [
+        {
+            "name": "Pitsanu Swangpheaw",
+            "email": "pitsanu_s@hotmail.com"
+        }
+    ]
+}
