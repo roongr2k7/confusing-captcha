@@ -2,21 +2,17 @@
 class Captcha {
   static $_e = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
   static $_f = ['', '+', '*', '-'];
-  function Captcha() {
-    foreach (func_get_args() as $a => $b) {
-      $this->{'a' . $a} = $b;
-    }
-    if (min($this->a1, $this->a3) < 1 || max($this->a1, $this->a3) > 9) throw new InvalidRangeException();
-  }
 
-  function __get($a) {
-    return ['l1' => self::$_e, 'r2' => self::$_e, 'o' => self::$_f];
+  function Captcha() {
+    foreach (func_get_args() as $a => $b) $this->{'_' . $a} = $b;
+    if (min($this->_1, $this->_3) < 1 || max($this->_1, $this->_3) > 9) throw new InvalidRangeException();
+    $this->_ = ['l1' => self::$_e, 'r2' => self::$_e, 'o' => self::$_f];
   }
 
   function __call($a, $b) {
     $a = strtolower($a)[3] ?: $a;
-    $b = $a === 'l' ? $this->a1 : ($a === 'o' ? $this->a2 : $this->a3);
-    return new o($a === 'o' ? $this->_[$a][$b] : $this->_[$a . $this->a0][$b] ?: $this->a3);
+    $b = $a === 'l' ? $this->_1 : ($a === 'o' ? $this->_2 : $this->_3);
+    return new o($a === 'o' ? $this->_[$a][$b] : $this->_[$a . $this->_0][$b] ?: $this->_3);
   }
 
   function toString() {
